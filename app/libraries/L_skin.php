@@ -77,8 +77,13 @@ class L_skin {
 			echo '<link rel="stylesheet" href="'.base_url($data).'">';
 		}else{
 			foreach($data as $val) {
-				echo '<link rel="stylesheet" href="'.base_url($val).'">';
-            	echo "\n";
+				if(stripos($val, 'https') !== false) {
+					echo '<link rel="stylesheet" href="'.$val.'">';
+            		echo "\n";
+				}else{
+					echo '<link rel="stylesheet" href="'.base_url($val).'">';
+	            	echo "\n";
+	            }
 			}
 		}
 	}
@@ -89,8 +94,14 @@ class L_skin {
 			echo '<script src="'.base_url($data).'"></script>';
 		}else{
 			foreach($data as $val) {
-				echo '<script src="'.base_url($val).'"></script>';
-            	echo "\n";
+				if(stripos($val, 'https') !== false) {
+					echo '<script src="'.$val.'"></script>';
+            		echo "\n";
+				}else{
+					echo '<script src="'.base_url($val).'"></script>';
+            		echo "\n";
+				}
+				
 			}
 		}
 	}

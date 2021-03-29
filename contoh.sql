@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2021 at 04:55 AM
+-- Generation Time: Feb 24, 2021 at 09:55 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -65,8 +65,7 @@ CREATE TABLE `conf_menu` (
 
 INSERT INTO `conf_menu` (`id_menu`, `icon`, `icon2`, `name`, `link`, `status`, `akses`, `sub`, `level`, `position`) VALUES
 (1, 'fa-desktop', '', 'Dashboard', 'home', 1, 1, 1, '\"1\",\"2\"', 1),
-(2, 'fa-cogs', '', 'Configuration', 'admin/gen_modul', 1, 1, 1, '\"1\",\"2\"', 2),
-(3, 'fa-calendar-alt', NULL, 'Calendar', 'admin/fullcalendar', 1, 1, 1, '\"1\",\"2\"', 3);
+(2, 'fa-cogs', '', 'Configuration', 'admin/gen_modul', 1, 1, 1, '\"1\",\"2\"', 2);
 
 -- --------------------------------------------------------
 
@@ -110,35 +109,8 @@ CREATE TABLE `conf_users` (
 --
 
 INSERT INTO `conf_users` (`id_user`, `fullname`, `avatar`, `username`, `password`, `salt`, `level`, `last_login`, `ip_address`, `status`) VALUES
-(1, 'Superadmin', 'img/avatar/6U6lk2At.jpg', 'admin', '89a0c6ee2ad740022ce185004dd64cca98c04b51', 'Wb8e.?s5', 1, '2021-03-01 20:29:17', '::1', 1),
+(1, 'Superadmin', 'img/avatar/6U6lk2At.jpg', 'admin', '89a0c6ee2ad740022ce185004dd64cca98c04b51', 'Wb8e.?s5', 1, '2021-02-16 12:04:44', '::1', 1),
 (2, 'Ardi S', '', 'ardi', '00cc677ebf28c2788351082fe42ccc8982437a9c', '+qt_a0Wy', 1, '0000-00-00 00:00:00', '', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `events`
---
-
-CREATE TABLE `events` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `start_event` datetime NOT NULL,
-  `end_event` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `events`
---
-
-INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`) VALUES
-(1, 'Meeting with Mike', '2019-11-08 12:00:00', '2019-11-08 13:00:00'),
-(4, 'Meeting with Mike', '2019-11-11 15:30:00', '2019-11-11 16:30:00'),
-(5, 'makan', '2021-03-02 00:00:00', '2021-03-03 00:00:00'),
-(6, 'minum', '2021-03-01 00:00:00', '2021-03-02 00:00:00'),
-(7, 'Serapan', '2021-03-02 00:00:00', '2021-03-03 00:00:00'),
-(8, 'breakfast', '2021-02-28 07:00:00', '2021-02-28 07:30:00'),
-(9, 'Work', '2021-02-28 08:30:00', '2021-02-28 09:00:00'),
-(10, 'asa', '2021-03-15 06:00:00', '2021-03-15 06:30:00');
 
 -- --------------------------------------------------------
 
@@ -161,8 +133,7 @@ INSERT INTO `items` (`id`, `item_number`, `item_name`) VALUES
 (2, '15000002', 'Komputer IMIP'),
 (3, '15000003', 'Seragam IMIP'),
 (4, '15000004', 'Buku IMIP'),
-(7, '15000005', 'Manchess IMIP'),
-(8, '1321432423', 'Loting IMIP');
+(7, '15000005', 'Manchess IMIP');
 
 -- --------------------------------------------------------
 
@@ -297,16 +268,7 @@ INSERT INTO `temp_login` (`id_temp`, `id_user`, `tanggal`, `ip_address`, `nama_u
 (6, 1, '2021-02-15 14:00:51', '::1', 'Superadmin'),
 (7, 1, '2021-02-15 20:49:18', '::1', 'Superadmin'),
 (8, 1, '2021-02-15 22:13:44', '::1', 'Superadmin'),
-(9, 1, '2021-02-16 12:04:44', '::1', 'Superadmin'),
-(10, 1, '2021-02-24 16:19:03', '::1', 'Superadmin'),
-(11, 1, '2021-02-25 14:58:36', '::1', 'Superadmin'),
-(12, 1, '2021-02-25 15:49:38', '::1', 'Superadmin'),
-(13, 1, '2021-02-25 16:34:45', '::1', 'Superadmin'),
-(14, 1, '2021-02-25 23:16:48', '::1', 'Superadmin'),
-(15, 1, '2021-02-26 15:10:43', '::1', 'Superadmin'),
-(16, 1, '2021-03-01 13:42:14', '::1', 'Superadmin'),
-(17, 1, '2021-03-01 15:38:46', '::1', 'Superadmin'),
-(18, 1, '2021-03-01 20:29:17', '::1', 'Superadmin');
+(9, 1, '2021-02-16 12:04:44', '::1', 'Superadmin');
 
 --
 -- Indexes for dumped tables
@@ -335,12 +297,6 @@ ALTER TABLE `conf_submenu`
 --
 ALTER TABLE `conf_users`
   ADD PRIMARY KEY (`id_user`);
-
---
--- Indexes for table `events`
---
-ALTER TABLE `events`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `items`
@@ -405,7 +361,7 @@ ALTER TABLE `conf_level`
 -- AUTO_INCREMENT for table `conf_menu`
 --
 ALTER TABLE `conf_menu`
-  MODIFY `id_menu` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_menu` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `conf_submenu`
@@ -420,16 +376,10 @@ ALTER TABLE `conf_users`
   MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `events`
---
-ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `items_brands`
@@ -459,7 +409,7 @@ ALTER TABLE `request_items_detail`
 -- AUTO_INCREMENT for table `temp_login`
 --
 ALTER TABLE `temp_login`
-  MODIFY `id_temp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_temp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
